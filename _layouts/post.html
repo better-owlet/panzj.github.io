@@ -13,7 +13,7 @@ layout: default
         <div class="entry-meta">
           <span>{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}</span> · <span>
             <time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-          </span> · <a href="{{ page.url | prepend: site.url }}#comments" title="Comment on Care Less What Other People Think">Leave a Reply</a> · <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.com/edit/master/{{ page.path }}" target="_blank">Modify</a></div>
+          </span> · <a href="{{ page.url | prepend: site.url }}#comments" title="Comment on Care Less What Other People Think">Leave a Reply</a> · <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/edit/master/{{ page.path }}" target="_blank">Modify</a></div>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
