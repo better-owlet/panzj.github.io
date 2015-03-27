@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+
+<article class="post entry">
+  {% if page.image %}
+  <div class="featured-image">
+    <a href="{{ page.url | prepend: site.url }}"><img src="{{ page.image }}" height="540" width="960" class="post-image" alt="{{ page.title }}"></a>
+  </div>
+  {% endif %}
+  <div class="entry-box">
+    <header class="entry-header">
+      <h1 class="entry-title">{{ page.title }}</h1>
+    </header>
+    <div class="entry-content">
+    {{ content }}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,36 @@
+<div class="site-top">
+  <nav class="site-nav" role="navigation">
+    <div class="inner">
+      <h3 id="menu-toggle" class="icon-menu">Menu</h3>
+      <div class="nav-menu">
+        <ul class="menu">
+          <li class="menu-item"><a href="{{ site.url }}/">Home</a></li>
+          {% for page in site.pages %}
+            {% if page.title %}
+            <li class="menu-item"><a href="{{ page.url | prepend: site.url }}">{{ page.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <a href="#" id="search-toggle" class="icon-search"><span class="screen-reader-text">Search</span></a>
+    </div><!-- .inner -->
+  </nav><!-- .site-nav -->
+  <div class="search-box">
+    <div class="inner">
+      <form role="search" method="get" class="search-form" action="/">
+        <label>
+          <span class="screen-reader-text">Search for:</span>
+          <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+        </label>
+        <input type="submit" class="search-submit" value="Search">
+      </form>
+    </div><!-- .inner -->
+  </div><!-- .search-box -->
+</div>
+
+<header class="site-header" role="banner">
+  <div class="inner">
+    <h1 class="site-title"><a class="logo-text" href="{{ site.url }}/">{{ site.title }}</a></h1>
+    <p class="site-tagline">{{ site.tagline }}</p>
+  </div>
+</header>

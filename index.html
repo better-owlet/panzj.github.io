@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+  {% for post in paginator.posts %}
+  <article class="post entry{% if post.image %} post-image{% endif %}{% if post.gallery %} post-gallery{% endif %}">
+    {% if post.image %}
+    <div class="featured-image">
+      <a href="{{ post.url | prepend: site.url }}"><img src="{{ post.image }}" height="540" width="960" class="post-image" alt="{{ post.title }}"></a>
+    </div>
+    {% endif %}
+    {% if post.gallery %}
+    <div class="featured-slider">
+      <ul class="rslides slides">
+    {% for image in post.gallery %}
+    <li class="slide"><a href="{{ post.url | prepend: site.url }}"><img src="{{ image }}" height="540" width="960" class="post-image" alt="{{ post.title }}"></a></li>
+    {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% if post.video %}
+    <div class="featured-video">
+      <div class="embed-container">
+        <iframe src="{{ post.video }}" width="720" height="405" frameborder="0" title="Box" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    </div>
+    {% endif %}
+
+
+    <div class="entry-box">
+      <header class="entry-header">
+        <h2 class="entry-title"><a href="{{ post.url | prepend: site.url }}" rel="bookmark">{{ post.title }}</a></h2>
+        <div class="entry-meta">
+          <a class="url fn n" href="{{ post.url | prepend: site.url }}" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}</a> · <a href="{{ post.url | prepend: site.url }}" rel="bookmark">
+            <time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </a> · <a href="{{ post.url | prepend: site.url }}#comments" title="Comment on Care Less What Other People Think">Leave a Reply</a> </div>
+      </header>
+      <!-- .entry-header -->
+      <div class="entry-content">
+        <p>{% if post.summary %} {{ post.summary }} {% else %} {{ post.excerpt | remove: '<p>' | remove: '</p>' }} {% endif %}</p>
+        <p><span class="read-more"> <a href="{{ post.url | prepend: site.url }}" class="more-link">Read More</a></span></p>
+      </div>
+      <!-- .entry-content -->
+    </div>
+    <!-- .entry-box -->
+  </article>
+  {% endfor %}
+
+
+
+  <!-- Pagination links -->
+  <nav class="paging-nav" role="navigation">
+    <h3 class="screen-reader-text">Posts navigation</h3>
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a class="prev page-numbers" title="Previous" href="{{site.url}}/"><i class="icon-angle-left" aria-hidden="true"></i><span class="screen-reader-text">Previous</span></a>
+      {% else %}
+        <a class="prev page-numbers" title="Previous" href="{{ paginator.previous_page_path | prepend: site.url}}"><i class="icon-angle-left" aria-hidden="true"></i><span class="screen-reader-text">Previous</span></a>
+      {% endif %}
+    {% endif %}
+    {% if paginator.next_page %}
+        <a class="next page-numbers" title="Next" href="{{paginator.next_page_path | prepend: site.url}}"><span class="screen-reader-text">Next</span><i class="icon-angle-right" aria-hidden="true"></i></a>
+    {% endif %}
+  </nav>

@@ -1,0 +1,71 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="inner">
+    <div class="supplementary" role="complementary">
+      <div class="grid">
+        <div class="one-third">
+          <aside id="text-2" class="widget widget_text">
+            <h3 class="widget-title">About Mowl Theme</h3>
+            <div class="textwidget">
+              <p>Mowl is a minimal, bold, responsive and easy to use jekyll theme. Its a perfect fit for artists, photographers, or just creative people looking for a theme with clean design to share their photos, galleries, videos and articles.</p>
+              <!-- <p><a href="http://marvelousowl.github.io/"><strong>Go to the project Mowl <i class=" icon-angle-double-right"></i></strong></a></p> -->
+            </div>
+          </aside>
+        </div>
+        {% if site.tags %}
+        <div class="one-third">
+          <aside id="recent-posts-2" class="widget widget_hot_tags">
+            <h3 class="widget-title">Hot Tags</h3>
+            {% for tag in site.tags limit:20 %}
+            <a href="{{ site.url }}/tags.html#{{ tag[0] | escape }}" rel="tag">{{ tag[0] }}({{ tag[1].size }})</a>{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+          </aside>
+        </div>
+        {% endif %}
+
+        {% if site.related_posts %}
+        <div class="one-third">
+          <aside id="recent-posts-2" class="widget widget_related_entries">
+            <h3 class="widget-title">Related Posts</h3>
+            <ul>
+              {% for p in site.related_posts limit:6 %}
+              <li>
+                <a href="{{ p.url }}">{{ p.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </aside>
+        </div>
+        {% else %}
+        <div class="one-third">
+          <aside id="recent-comments-3" class="widget widget_recent_entries">
+            <h3 class="widget-title">Recent Posts</h3>
+            <ul>
+              {% for p in site.posts limit:6 %}
+              <li>
+                <a href="{{ p.url }}">{{ p.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </aside>
+        </div>
+        {% endif %}
+      </div>
+      <!-- .grid -->
+    </div>
+    <!-- .supplementary -->
+    <div class="social-links">
+      {% for social in site.author.social %}
+      <a href="{{social.url}}" class="socnet-link icon-{{social.icon}}" title="{{social.desc}}"><span class="screen-reader-text">{{social.desc}}</span></a>
+      {% endfor %}
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="socnet-link icon-rss"><span class="screen-reader-text">via RSS</span></a>
+    </div>
+    <div class="copyright">
+      © 2015 {{ site.title }}. Powered by {{ jekyll.version | prepend:'Jekyll ' }}, with a custom theme <a href="http://marvelousowl.github.io/">Mowl</a>.
+    </div>
+  </div>
+  <!-- .inner -->
+</footer>
+
+<script src="/assets/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="/assets/js/app.js"></script>
+

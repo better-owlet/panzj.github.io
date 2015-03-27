@@ -1,0 +1,21 @@
+---
+layout: page
+title: "Archives"
+image: "/assets/images/2015/03/28/archives.jpg"
+---
+
+  {% for post in site.posts %}
+  {% unless post.next %}
+  <h3>{{ post.date | date: '%Y' }}</h3>
+  <ul>
+  {% else %} {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %} {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+    {% if year != nyear %}
+  </ul>
+  <h3>{{ post.date | date: '%Y' }}</h3>
+  <ul>
+    {% endif %}
+  {% endunless %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+

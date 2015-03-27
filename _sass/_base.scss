@@ -1,0 +1,247 @@
+/**
+ * Reset some basic elements
+ */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 300;
+  color: $text-color;
+}
+html {
+  overflow-y: scroll
+}
+
+body {
+  color: $text-color;
+  background-color: $background-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure {
+  margin-bottom: $spacing-unit / 2;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+a:hover img {
+  opacity: 0.8;
+}
+
+figure {
+  margin: 0;
+}
+
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+ul,
+ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul, > ol {
+    margin-bottom: $spacing-unit/2;
+  }
+}
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+  background-color: transparent;
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+  &:hover {
+    color: $text-color;
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: thin dotted;
+  }
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+blockquote {
+  color: $grey-color;
+  border-left: 4px solid $grey-color-light;
+  padding-left: $spacing-unit / 2;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+  >:last-child {
+    margin-bottom: 0;
+  }
+}
+
+pre,
+code {
+  font-size: 14px;
+  font-family: $code-font-family;
+  background-color: #f5f7f8;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption {
+  color: #aeb0b1;
+  font-style: italic;
+  margin-bottom: $spacing-unit/2;
+  text-align: left;
+}
+th,
+td {
+  border-top: 1px solid #dbdedf;
+  padding: 8px 10px;
+}
+th {
+  background: #f2f5f7;
+  color: #30373d;
+  font-weight: bold;
+}
+hr {
+  background: #f2f5f7;
+  border: 0;
+  height: 3px;
+  margin: 24px 0;
+}
+h1 {
+  font-size: 38px;
+}
+h2 {
+  font-size: 34px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 18px;
+}
+
+button,
+input,
+select,
+textarea {
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #666;
+  font-size: 16px;
+  max-width: 100%;
+  padding: 6px 10px;
+  vertical-align: baseline;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: #f2f5f7;
+  outline: 0;
+}
