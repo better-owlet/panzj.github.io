@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<div class="page-post">
   <article class="post entry">
     {% if page.image %}
     <div class="featured-image">
@@ -11,9 +12,9 @@ layout: default
       <header class="entry-header">
         <h1 class="entry-title"><a href="{{ page.url | prepend: site.url }}" rel="bookmark">{{ page.title }}</a></h1>
         <div class="entry-meta">
-          <span>{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}</span> · <span>
+          <i class="icon-user"></i><span>{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}</span> · <i class="icon-clock"></i><span>
             <time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-          </span> · <a href="{{ page.url | prepend: site.url }}#comments" title="Comment on Care Less What Other People Think">Leave a Reply</a> · <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/edit/master/{{ page.path }}" target="_blank">Modify</a></div>
+          </span> · <i class="icon-chat-empty"></i><a href="{{ page.url | prepend: site.url }}#disqus_thread" title="Comment on Care Less What Other People Think">Reply</a> · <i class="icon-pencil"></i><a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/edit/master/{{ page.path }}" target="_blank">Modify</a></div>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
@@ -24,11 +25,11 @@ layout: default
       <footer class="entry-footer entry-meta">
         <i class="icon-folder-open"></i>
         {% for category in page.categories %}
-        <a href="{{ site.url }}/categories.html#{{ category | escape }}" rel="category">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+        <a href="{{ site.url }}/categories/#{{ category | escape }}" rel="category">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
         {% endfor %}
         &nbsp;<i class="icon-tag"></i>
         {% for tag in page.tags %}
-        <a href="{{ site.url }}/tags.html#{{ tag | escape }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+        <a href="{{ site.url }}/tags/#{{ tag | escape }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
         {% endfor %}
       </footer>
       <!-- .entry-meta -->
@@ -44,4 +45,25 @@ layout: default
     </div>
     <!-- .author-box -->
   </article>
+  <div class="comments-area">
+    <h3 id="comments-title">Comments</h3>
+    <div class="column-large">
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var disqus_shortname = 'marvelousowl';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+</div>
 

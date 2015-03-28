@@ -16,7 +16,7 @@
           <aside id="recent-posts-2" class="widget widget_hot_tags">
             <h3 class="widget-title">Hot Tags</h3>
             {% for tag in site.tags limit:20 %}
-            <a href="{{ site.url }}/tags.html#{{ tag[0] | escape }}" rel="tag">{{ tag[0] }}({{ tag[1].size }})</a>{% if forloop.last == false %}, {% endif %}
+            <a href="{{ site.url }}/tags/#{{ tag[0] | escape }}" rel="tag">{{ tag[0] }}({{ tag[1].size }})</a>{% if forloop.last == false %}, {% endif %}
             {% endfor %}
           </aside>
         </div>
