@@ -14,7 +14,7 @@ layout: default
         <div class="entry-meta">
           <i class="icon-user"></i><span>{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}</span> · <i class="icon-clock"></i><span>
             <time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-          </span> · <i class="icon-chat-empty"></i><a href="{{ page.url | prepend: site.url }}#disqus_thread" title="Comment on Care Less What Other People Think">Reply</a> · <i class="icon-pencil"></i><a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/edit/master/{{ page.path }}" target="_blank">Modify</a></div>
+          </span> · <i class="icon-chat-empty"></i><a href="{{ page.url | prepend: site.url }}#disqus_thread" title="Comment on Care Less What Other People Think">Reply</a> · <i class="icon-edit"></i><a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/edit/master/{{ page.path }}" target="_blank">Modify</a></div>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
