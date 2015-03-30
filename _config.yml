@@ -12,11 +12,11 @@ exclude:
   - README.md
   - LICENSE
 permalink: /:categories/:title.html
-paginate: 5
+paginate: 8
 paginate_path: page/:num
 
 markdown: redcarpet
-highlighter: rouge # pygments rouge
+highlighter: pygments # pygments rouge
 
 twitter_username: marvelousowl
 github_username:  marvelousowl
@@ -43,14 +43,5 @@ author :
       url:  http://t.qq.com/MarvelousOwl
       desc: Follow me on tencent weibo
 
-
 disqus:
-  config:
-    - label: disqus_shortname
-      value: 'havvgsplayground'
-
-googleanalytics:
-  account: UA-738346-7
-
-gosquared:
-  account: GSN-841923-G
+  account: marvelousowl
