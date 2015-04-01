@@ -17,13 +17,19 @@
   </nav><!-- .site-nav -->
   <div class="search-box">
     <div class="inner">
-      <form role="search" method="get" class="search-form" action="/">
-        <label>
-          <span class="screen-reader-text">Search for:</span>
-          <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-submit" value="Search">
-      </form>
+      <script>
+        (function() {
+          var cx = '{{ site.google.search_engine_ID }}';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//www.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:search></gcse:search>
     </div><!-- .inner -->
   </div><!-- .search-box -->
 </div>
