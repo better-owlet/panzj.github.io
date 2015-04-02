@@ -4,7 +4,7 @@ tagline: Developing Software is Fun!
 description: Developing Software is Fun! Developing Software is Fun!
 
 baseurl: ""
-url: "http://marvelousowl.github.io" # "http://127.0.0.1:4000"
+url: "http://127.0.0.1:4000" # "http://marvelousowl.github.io"
 sass:
   sass_dir: _sass
   style: compressed

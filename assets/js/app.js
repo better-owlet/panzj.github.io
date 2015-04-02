@@ -10,6 +10,21 @@ a.pauseControls&&d.hover(function(){clearInterval(p)},function(){m()})}}if("unde
 (function ($) {
   "use strict";
   $(document).ready(function() {
+    var $window = $(window);
+    var winHeight = parseInt($window.height());
+    var $topLink = $('.toplink');
+    var $htmlBody = $('html, body');
+    $window.on('scroll', function(event) {
+      event.preventDefault();
+      var scrollTop = $window.scrollTop();
+      $topLink.toggleClass('active', (scrollTop >= winHeight));
+    });
+    $topLink.on('click', function(event) {
+      event.preventDefault();
+      $htmlBody.animate({
+        scrollTop: 0
+      }, 800);
+    });
 
     // Remove "no-js" CSS fallback class
     $('body').removeClass('no-js');
@@ -73,17 +88,18 @@ a.pauseControls&&d.hover(function(){clearInterval(p)},function(){m()})}}if("unde
       }
     });
 
+    $(window).load(function() {
+      $(".rslides").responsiveSlides({
+        speed: 500, // Integer: Speed of the transition, in milliseconds
+        timeout: 4000, // Integer: Time between slide transitions, in milliseconds
+        nav: true, // Boolean: Show navigation, true or false
+        prevText: "<i class='icon-angle-left' aria-hidden='true'></i>", // String: Text for the "previous" button
+        nextText: "<i class='icon-angle-right' aria-hidden='true'></i>", // String: Text for the "next" button
+      });
+    });
+
   });
 
-  $(window).load(function() {
-    $(".rslides").responsiveSlides({
-      speed: 500, // Integer: Speed of the transition, in milliseconds
-      timeout: 4000, // Integer: Time between slide transitions, in milliseconds
-      nav: true, // Boolean: Show navigation, true or false
-      prevText: "<i class='icon-angle-left' aria-hidden='true'></i>", // String: Text for the "previous" button
-      nextText: "<i class='icon-angle-right' aria-hidden='true'></i>", // String: Text for the "next" button
-    });
-  });
 
   var menuDropdown = function() {
     if ( $('#menu-toggle').is(':hidden') ) {

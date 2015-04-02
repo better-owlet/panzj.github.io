@@ -1300,6 +1300,32 @@ video {
   color: #27ae60;
 }
 
+/* Widgets */
+.widget {
+  margin: 0 0 30px;
+}
+
+.widget-title {
+  color: #dbdedf;
+  font-size: 18px;
+  letter-spacing: normal;
+}
+
+.widget_archive ul,
+.widget_categories ul,
+.widget_pages ul,
+.widget_meta ul,
+.widget_related_entries ul,
+.widget_recent_entries ul,
+.widget_rss ul,
+.widget_nav_menu ul {
+  list-style: none;
+  padding: 0;
+}
+.widget_hot_tags a,
+.widget_recent_entries li a{
+  text-decoration: none;
+}
 /* Responsive Slides,
    http://responsiveslides.com v1.54 by @viljamis
 ------------------------*/
@@ -1444,85 +1470,36 @@ video {
 .infinite-scroll .infinite-loader .spinner {
   left: 50% !important;
 }
-
-/* Related */
-.entry-content #jp-relatedposts .jp-relatedposts-headline {
-  color: #aeb0b1;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.5;
-  margin: 0 0 12px;
-}
-
-.entry-content #jp-relatedposts .jp-relatedposts-headline em:before {
-  border-top: 1px solid #f2f5f7;
-}
-
-.entry-content #jp-relatedposts .jp-relatedposts-headline em {
-  font-weight: normal;
-}
-
-.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-title {
-}
-
-.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-title .jp-relatedposts-post-a {
-  font-weight: bold;
-}
-
-.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
-.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
-  color: #aeb0b1;
-  font-size: 12px;
-  line-height: 1.5;
-  opacity: 1;
-}
-
-/* Contact form */
-.entry-content .contact-form label {
-}
-
-.entry-content .contact-form input[type="text"],
-.entry-content .contact-form input[type="email"],
-.entry-content .contact-form input[type="url"],
-.entry-content .contact-form textarea {
-  width: 100%;
-}
-
-.entry-content .contact-form .contact-submit {
-  margin-top: 12px;
-}
-
-/* Jetpack Comments */
-.comment-subscription-form {
-  margin-bottom: 12px;
-}
-
-.comment-subscription-form .subscribe-label {
-  font-style: italic;
-  font-weight: normal;
-}
-
-/* Contact Form 7
+/* Toplink
 ------------------------*/
-.wpcf7-form p {
-  margin-bottom: 12px;
-}
-
-.wpcf7-form-control-wrap {
+.toplink {
   display: block;
-  margin-top: 3px;
+  position: fixed;
+  bottom: -52px;
+  right: 15px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 48px;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  z-index: 100;
+  -webkit-transition: background-color 0.3s, bottom 0.3s;
+  transition: background-color 0.3s, bottom 0.3s;
+  background-color: rgba(0,0,0,0.3);
+  color: #fff;
+  &.active {
+    bottom: 15px;
+  }
+  &:hover{
+    color:#fff;
+    background-color: #27ae60;
+  }
+  .icon:before{
+    margin-right: 0;
+  }
 }
 
-.wpcf7-form input[type="text"],
-.wpcf7-form input[type="email"],
-.wpcf7-form input[type="url"],
-.wpcf7-form textarea {
-  width: 100%;
-}
-
-.wpcf7-form input[type="submit"] {
-  margin-top: 12px;
-}
 
 /* Media Queries
 ------------------------*/
