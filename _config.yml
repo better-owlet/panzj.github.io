@@ -1,10 +1,11 @@
 version : 0.0.1
-title: Marvelous owl
+title: Panzj'bolg
 tagline: Developing Software is Fun!
 description: Developing Software is Fun! Developing Software is Fun!
 
 baseurl: ""
-url: "http://panzj.github.io" # "http://127.0.0.1:4000"
+url: "http://panzj.github.io"
+# url: "http://127.0.0.1:4000"
 sass:
   sass_dir: _sass
   style: compressed
@@ -19,20 +20,20 @@ markdown: redcarpet
 highlighter: pygments # pygments rouge
 
 twitter_username: marvelousowl
-github_username:  marvelousowl
+github_username:  panzj
 author :
-  name : MarvelousOwl
-  email : marvelousowl@gmail.com
-  github: marvelousowl
+  name : panzj
+  email : panzj1940@gmail.com
+  github: panzj
   avatar: /assets/images/avatar.jpg
   intro: I’m a developer from the UK who also enjoys photography. I wrote a couple of books about PHP and JavaScript. Currently procrastinating about writing another.
   social:
     - icon: github-circled
-      url: https://github.com/marvelousowl
+      url: https://github.com/panzj
       desc: Fork me on github
 
     - icon: weibo
-      url:  http://weibo.com/marvelousowl
+      url:  http://weibo.com/panzj1940
       desc: Follow me on weibo
 
     - icon: twitter
