@@ -3,7 +3,9 @@ layout: post
 category: "java"
 title: "Manven构建基本步骤"
 tags: ["manven"]
+nofeatured: true
 ---
+Android的版本分化真麻烦，前些天从SD卡读JSONObject配置，发现一些手机正常，另一些异常（JSONObject转换问题）。后来无奈改成String数组解决了兼容问题。Android的版本分化真麻烦，前些天从SD卡读JSONObject配置，发现一些手机正常，另一些异常（JSONObject转换问题）。后来无奈改成String数组解决了兼容问题。Android的版本分化真麻烦，前些天从SD卡读JSONObject配置，发现一些手机正常，另一些异常（JSONObject转换问题）。后来无奈改成String数组解决了兼容问题。Android的版本分化真麻烦，前些天从SD卡读JSONObject配置，发现一些手机正常，另一些异常（JSONObject转换问题）。后来无奈改成String数组解决了兼容问题。
 ####主要步骤
 1, download and install maven。  
 2, mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app 创建新工程。  
@@ -22,31 +24,31 @@ tags: ["manven"]
 
 ####附pom.xml主要结构：
 
-	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	  <modelVersion>4.0.0</modelVersion>
+  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	  <groupId>com.youth168.maventest</groupId>
-	  <artifactId>my-maven-app</artifactId>
-	  <version>1.0-SNAPSHOT</version>
-	  <packaging>jar</packaging>
+    <groupId>com.youth168.maventest</groupId>
+    <artifactId>my-maven-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	  <name>my-maven-app</name>
-	  <url>http://maven.apache.org</url>
+    <name>my-maven-app</name>
+    <url>http://maven.apache.org</url>
 
-	  <properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	  </properties>
+    <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-	  <dependencies>
-		<dependency>
-		  <groupId>junit</groupId>
-		  <artifactId>junit</artifactId>
-		  <version>{latest-version}</version>
-		  <scope>test</scope>
-		</dependency>
-	  </dependencies>
-	</project>
-	
+    <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>{latest-version}</version>
+      <scope>test</scope>
+    </dependency>
+    </dependencies>
+  </project>
+  
 
 （完~）

@@ -8,6 +8,15 @@ layout: default
       <a href="{{ page.url | prepend: site.url }}"><img src="{{ page.image }}" height="540" width="960" class="post-image" alt="{{ page.title }}"></a>
     </div>
     {% endif %}
+    {% if page.gallery %}
+    <div class="featured featured-slider">
+      <ul class="rslides slides">
+        {% for image in page.gallery %}
+        <li class="slide"><a href="{{ page.url | prepend: site.url }}"><img src="{{ image }}" height="540" width="960" class="post-image" alt="{{ page.title }}"></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
     <div class="entry-box">
       <header class="entry-header">
         <h1 class="entry-title"><a href="{{ page.url | prepend: site.url }}" rel="bookmark">{{ page.title }}</a></h1>

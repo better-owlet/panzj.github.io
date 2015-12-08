@@ -86,14 +86,12 @@
       }
     });
 
-    $(window).load(function() {
-      $(".rslides").responsiveSlides({
-        speed: 500, // Integer: Speed of the transition, in milliseconds
-        timeout: 4000, // Integer: Time between slide transitions, in milliseconds
-        nav: true, // Boolean: Show navigation, true or false
-        prevText: "<i class='icon-angle-left' aria-hidden='true'></i>", // String: Text for the "previous" button
-        nextText: "<i class='icon-angle-right' aria-hidden='true'></i>", // String: Text for the "next" button
-      });
+    $(".rslides").responsiveSlides({
+      speed: 500, // Integer: Speed of the transition, in milliseconds
+      timeout: 4000, // Integer: Time between slide transitions, in milliseconds
+      nav: true, // Boolean: Show navigation, true or false
+      prevText: "<i class='icon-angle-left' aria-hidden='true'></i>", // String: Text for the "previous" button
+      nextText: "<i class='icon-angle-right' aria-hidden='true'></i>", // String: Text for the "next" button
     });
 
   });
