@@ -13,20 +13,18 @@ exclude:
   - README.md
   - LICENSE
 permalink: /:categories/:title.html
-paginate: 8
+paginate: 12
 paginate_path: page/:num
 
 markdown: redcarpet
 highlighter: pygments # pygments rouge
 
-twitter_username: marvelousowl
-github_username:  panzj
 author :
   name : panzj
   email : panzj1940@gmail.com
   github: panzj
   avatar: /assets/images/avatar.jpg
-  intro: I’m a developer from the UK who also enjoys photography. I wrote a couple of books about PHP and JavaScript. Currently procrastinating about writing another.
+  intro: Developing Software is Fun! Developing Software is Fun!Developing Software is Fun! Developing Software is Fun!
   social:
     - icon: github-circled
       url: https://github.com/panzj
@@ -45,7 +43,7 @@ author :
       desc: Follow me on tencent weibo
 
 disqus:
-  account: marvelousowl
+  account: panzj
 google:
   search_engine_ID: 014096054277178994371:ulz0rt4ph28
   analytics_Tracking_ID: UA-61445130-1

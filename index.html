@@ -1,50 +1,47 @@
 ---
 layout: default
 ---
-
-  {% for post in paginator.posts %}
-  <article class="post entry{% if post.image %} post-image{% endif %}{% if post.gallery %} post-gallery{% endif %}">
-    {% if post.image %}
-    <div class="featured-image">
-      <a href="{{ post.url | prepend: site.url }}"><img src="{{ post.image }}" height="540" width="960" class="post-image" alt="{{ post.title }}"></a>
-    </div>
-    {% endif %}
-    {% if post.gallery %}
-    <div class="featured-slider">
-      <ul class="rslides slides">
-    {% for image in post.gallery %}
-    <li class="slide"><a href="{{ post.url | prepend: site.url }}"><img src="{{ image }}" height="540" width="960" class="post-image" alt="{{ post.title }}"></a></li>
-    {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-    {% if post.video %}
-    <div class="featured-video">
-      <div class="embed-container">
-        <iframe src="{{ post.video }}" width="720" height="405" frameborder="0" title="Box" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <section class="post-list clearfix">
+    {% for post in paginator.posts %}<article class="post entry{% if post.image %} post-image{% endif %}{% if post.gallery %} post-gallery{% endif %}">
+      {% if post.image %}
+      <div class="featured featured-image">
+        <a href="{{ post.url | prepend: site.url }}"><img src="{{ post.image }}" height="540" width="960" class="post-image" alt="{{ post.title }}"></a>
       </div>
-    </div>
-    {% endif %}
-
-
-    <div class="entry-box">
-      <header class="entry-header">
-        <h2 class="entry-title"><a href="{{ post.url | prepend: site.url }}" rel="bookmark">{{ post.title }}</a></h2>
-        <div class="entry-meta">
-          <i class="icon-user"></i><a class="url fn n" href="{{ post.url | prepend: site.url }}" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}</a> · <i class="icon-clock"></i><a href="{{ post.url | prepend: site.url }}" rel="bookmark">
-            <time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-          </a> · <i class="icon-chat-empty"></i><a href="{{ post.url | prepend: site.url }}#disqus_thread" title="Comment on Care Less What Other People Think">Reply</a> </div>
-      </header>
-      <!-- .entry-header -->
-      <div class="entry-content">
-        <p>{% if post.summary %} {{ post.summary }} {% else %} {{ post.excerpt | remove: '<p>' | remove: '</p>' }} {% endif %}</p>
-        <p><span class="read-more"> <a href="{{ post.url | prepend: site.url }}" class="more-link">Read More</a></span></p>
+      {% endif %}
+      {% if post.gallery %}
+      <div class="featured featured-slider">
+        <ul class="rslides slides">
+          {% for image in post.gallery %}
+          <li class="slide"><a href="{{ post.url | prepend: site.url }}"><img src="{{ image }}" height="540" width="960" class="post-image" alt="{{ post.title }}"></a></li>
+          {% endfor %}
+        </ul>
       </div>
-      <!-- .entry-content -->
-    </div>
-    <!-- .entry-box -->
-  </article>
-  {% endfor %}
+      {% endif %}
+      {% if post.video %}
+      <div class="featured featured-video">
+        <div class="embed-container">
+          <iframe src="{{ post.video }}" width="720" height="405" frameborder="0" title="Box" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="entry-box">
+        <header class="entry-header">
+          <h2 class="entry-title"><a href="{{ post.url | prepend: site.url }}" rel="bookmark">{{ post.title }}</a></h2>
+          <div class="entry-meta">
+            <i class="icon-user"></i><a class="url fn n" href="{{ post.url | prepend: site.url }}" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}</a> · <i class="icon-clock"></i><a href="{{ post.url | prepend: site.url }}" rel="bookmark">
+              <time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            </a> · <i class="icon-chat-empty"></i><a href="{{ post.url | prepend: site.url }}#disqus_thread" title="Comment on Care Less What Other People Think">Reply</a> </div>
+        </header>
+        <!-- .entry-header -->
+        <div class="entry-content">
+          <p>{% if post.summary %} {{ post.summary | strip_html | strip_newlines | truncate:75 }} {% else %} {{ post.excerpt | strip_html | strip_newlines | truncate:75 }} {% endif %}</p>
+        </div>
+        <!-- .entry-content -->
+      </div>
+      <!-- .entry-box -->
+    </article>{% endfor %}
+  </section>
 
 
 
@@ -63,7 +60,7 @@ layout: default
     {% endif %}
   </nav>
   <script type="text/javascript">
-    var disqus_shortname = 'marvelousowl';
+    var disqus_shortname = '{{ site.disqus.account }}';
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
