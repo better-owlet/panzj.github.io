@@ -936,7 +936,7 @@ video {
 .comment-nav .page-numbers,
 .post-nav a {
   background-color: #606669;
-  border-radius: 2px;
+  border-radius: 200px;
   color: #f2f5f7;
   display: inline-block;
   font-weight: bold;
@@ -989,6 +989,35 @@ video {
   background: #27ae60;
   color: #fff;
 }
+
+.page-nav{
+  a{
+    display: block;
+    position: fixed;
+    bottom: 100px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 48px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    z-index: 100;
+    // background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    @include transition(background-color 0.3s, bottom 0.3s);
+    &.page-previous{
+      left: 15px;
+    }
+    &.page-next{
+      right: 15px;
+    }
+    &:hover {
+      color: #fff;
+      background-color: #27ae60;
+    }
+  }
+}
+
 
 /* Footer
 ------------------------*/

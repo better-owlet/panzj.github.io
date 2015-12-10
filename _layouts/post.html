@@ -22,12 +22,12 @@ layout: default
         <h1 class="entry-title"><a href="{{ page.url | prepend: site.url }}" rel="bookmark">{{ page.title }}</a></h1>
         <div class="entry-meta">
           <i class="icon-user"></i><span>{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}</span> · <i class="icon-clock"></i><span>
-            <time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+            <time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%-m-%d" }}</time>
           </span> · <i class="icon-chat-empty"></i><a href="{{ page.url | prepend: site.url }}#disqus_thread" title="Comment on Care Less What Other People Think">Reply</a> · <i class="icon-edit"></i><a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io/edit/master/{{ page.path }}" target="_blank">Modify</a></div>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
-        <p>{% if page.summary %} {{ page.summary }} {% endif %}</p>
+        {% if page.summary %} <p>{{ page.summary }}</p> {% endif %}
         {{ content }}
       </div>
       <!-- .entry-content -->
@@ -74,6 +74,12 @@ layout: default
       <div id="disqus_thread"></div>
     </div>
   </div>
-
 </div>
-
+<div class="page-nav">
+{% if page.previous %}
+  <a class="page-previous" href="{{ page.previous.url }}" title="上一篇: {{ page.previous.title }}"><i class="icon icon-angle-left"></i></a>
+{% endif %}
+{% if page.next %}
+  <a class="page-next" href="{{ page.next.url }}" title="下一篇: {{ page.next.title }}"><i class="icon icon-angle-right"></i></a>
+{% endif %}
+</div>
